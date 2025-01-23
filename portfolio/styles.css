@@ -190,7 +190,7 @@ iframe {
 #logo-img {
   position: absolute;
   height: 5rem;
-  top: 0;
+  top: 5rem;
   padding: 1rem;
 }
 
@@ -264,7 +264,7 @@ iframe {
 
 /* FOR SMALL SCREENS */
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   #navbar {
     padding: 1rem;
   }
@@ -283,6 +283,10 @@ iframe {
 
   #profile-section, #projects-section {
     padding: 1rem;
+  }
+
+  .project-tile {
+    width: 90%;
   }
 
   .col {
@@ -306,4 +310,42 @@ iframe {
   h2 {
     font-size: 3rem;
   }
+}
+
+/* ANIMATIONS */
+
+@keyframes slideIn {
+  from {
+    opacity: 0.1;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0.1;
+    transform: translateY(0px) scale(0.9);
+  }
+}
+
+section {
+  opacity:0.1;
+  transform: translateY(0px) scale(0.9);
+  animation: slideOut 0.8s ease-in-out;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0px);
+  animation: slideIn 0.8s ease-in-out;
 }
